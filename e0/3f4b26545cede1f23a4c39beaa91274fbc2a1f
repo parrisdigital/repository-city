@@ -1,0 +1,202 @@
+CONTRIBUTING.md
+  s_1ac4248eebc699::t_6ef517a8308cfc 1-12
+components/city/city-experience.tsx
+  s_1ac4248eebc699::t_d527ea9b687343 1-25,30-31,36-42,49-63,66-80,88-96,98-116,122-124,131,133-139,142-144,148-179,182,186-188,193,198,201-204,210-216,219,222-239,243-249,252-258,264-266,272,274-279,281-286,292-317,319-331,333-355,359-375,378,387-393,395-401,418-426,443,452-454,475-519
+  s_1ac4248eebc699::t_b9c9dd11ec81aa 81-87,332
+  s_1ac4248eebc699::t_a7c66182323814 140-141
+  s_1ac4248eebc699::t_7bc1cc0533d097 180-181,189-192,194-197,199-200
+  s_1ac4248eebc699::t_c74a1266420674 32-35,121,125-130,132,250,273,318
+  s_1ac4248eebc699::t_cfc50ab3778262 117-120
+  s_1ac4248eebc699::t_2eb7d562fb907a 26-29,64-65,145-147,183-185,240-242,251,259-263,267-271,280,287-291,356-358,376-377,379-386,394,402-417,427-442,444-451,455-474
+  s_1ac4248eebc699::t_d2d59fa0c9a4fe 43-48
+  s_1ac4248eebc699::t_cad79220e81530 205-209
+  s_1ac4248eebc699::t_d2a6d974e21520 217-218,220-221
+  s_1ac4248eebc699::t_b2b98084065dcd 97
+SECURITY.md
+  s_1ac4248eebc699::t_6ef517a8308cfc 1-5
+lib/github/parse-repository.test.ts
+  s_1ac4248eebc699::t_fd3918d2fdd238 1-7,16-29
+  s_1ac4248eebc699::t_2eb7d562fb907a 8-15
+.github/ISSUE_TEMPLATE/bug.yml
+  s_1ac4248eebc699::t_6ef517a8308cfc 1-25
+.github/dependabot.yml
+  s_1ac4248eebc699::t_6ef517a8308cfc 1-11
+app/icon.svg
+  s_1ac4248eebc699::t_502a9f78d73aba 1-10
+lib/city/layout.ts
+  s_1ac4248eebc699::t_2eb7d562fb907a 47,60-63,79-82
+  s_1ac4248eebc699::t_0e68823d40c197 132
+  s_1ac4248eebc699::t_523d591cdeefdf 1-10,16,22-23,41-46,48-59,64-71,74-78,83-105,109-130,135-137,154-200
+  s_1ac4248eebc699::t_0f0e17ab65e3f3 17-18,24-40,72-73,106,131,138-151
+  s_1ac4248eebc699::t_4f55f885fe02f4 19-20
+  s_1ac4248eebc699::t_d2d59fa0c9a4fe 11-15,21,152-153
+  s_1ac4248eebc699::t_53124651c928cc 107-108
+  s_1ac4248eebc699::t_bfaffaae0f86ac 133-134
+components/city/city-scene.tsx
+  s_1ac4248eebc699::t_9e3e18e707821c 15,323-325,569
+  s_1ac4248eebc699::t_05e79ff3a346fc 511,521-522,533,544-545
+  s_1ac4248eebc699::t_4bd518eefa8f8d 3,106-147,214
+  s_1ac4248eebc699::t_073e4cbf2d902e 520
+  s_1ac4248eebc699::t_360b13f28f0478 150-153,156,163-165,190-192,223-234,287-291,346-348,388-389
+  s_1ac4248eebc699::t_942570d939ac07 4
+  s_1ac4248eebc699::t_c74a1266420674 456
+  s_1ac4248eebc699::t_8559770ecc8c2b 46-48,50-55,57,70,72
+  s_1ac4248eebc699::t_4f09c900006029 160,173,579,582,584-585,589,609,620
+  s_1ac4248eebc699::t_eb0aa8e2570edb 1-2,6-14,16-21,26-45,49,73-77,148,187-188,198,204,215-216,295-310,314-317,320-322,326-333,365-373,413-422,425-428,432-449,453-455,457-459,501-510,512-514,519,523-532,534-535,537-540,542-543,546-563,566-568,570-578,586-588,590-596,607-608,610,616-619,621-635
+  s_1ac4248eebc699::t_a66c07ade8ef04 515-516
+  s_1ac4248eebc699::t_28306f7b04c398 518,536,541
+  s_1ac4248eebc699::t_bfaffaae0f86ac 611-615
+  s_1ac4248eebc699::t_1e8ff10bb51a2f 56,58-69
+  s_1ac4248eebc699::t_cad79220e81530 71
+  s_1ac4248eebc699::t_a962a78c873bba 78-105,149,154-155,157-159,161-162,166-172,174-186,189,194-196,199,201,203,205-213,217-222,235-286,292-294
+  s_1ac4248eebc699::t_0e68823d40c197 517,565
+  s_1ac4248eebc699::t_2eb7d562fb907a 5,22-25,193,197,200,202,423-424,564,580-581,583,597-606
+  s_1ac4248eebc699::t_1f4d2eefcfcf40 311-313,318-319,334-345,349-364,374-387,390-412,429-431,450-452,460-500
+app/city/[owner]/[repository]/page.tsx
+  s_1ac4248eebc699::t_d527ea9b687343 1-8,12-22
+  s_1ac4248eebc699::t_2eb7d562fb907a 9-11
+vitest.config.ts
+  s_1ac4248eebc699::t_6ef517a8308cfc 1-18
+CODE_OF_CONDUCT.md
+  s_1ac4248eebc699::t_6ef517a8308cfc 1-3
+lib/city/build-city.ts
+  s_1ac4248eebc699::t_2eb7d562fb907a 4-8,22-26,36-37
+  s_1ac4248eebc699::t_523d591cdeefdf 1-3,9-21,27-35,38-63
+.prettierignore
+  s_1ac4248eebc699::t_6ef517a8308cfc 1-6
+lib/github/parse-repository.ts
+  s_1ac4248eebc699::t_2eb7d562fb907a 17-19,27-29
+  s_1ac4248eebc699::t_523d591cdeefdf 1-16,20-26,30-47
+lib/city/layout.test.ts
+  s_1ac4248eebc699::t_fd3918d2fdd238 1-66
+lib/city/palette.ts
+  s_1ac4248eebc699::t_523d591cdeefdf 1-32
+.prettierrc.json
+  s_1ac4248eebc699::t_6ef517a8308cfc 1-6
+app/api/city/route.ts
+  s_1ac4248eebc699::t_523d591cdeefdf 1-44,47-62
+  s_1ac4248eebc699::t_2eb7d562fb907a 45-46
+.github/ISSUE_TEMPLATE/feature.yml
+  s_1ac4248eebc699::t_6ef517a8308cfc 1-17
+.github/workflows/ci.yml
+  s_1ac4248eebc699::t_6ef517a8308cfc 1-28
+  s_1ac4248eebc699::t_9edb9f9f1ee408 29-30
+AGENTS.md
+  s_1ac4248eebc699::t_fd5e03686b8d08 1,3-6
+  s_1ac4248eebc699::t_2eb7d562fb907a 2
+components/city/city-canvas.tsx
+  s_1ac4248eebc699::t_eb0aa8e2570edb 1-8,11-52
+  s_1ac4248eebc699::t_2eb7d562fb907a 9-10
+tsconfig.json
+  s_1ac4248eebc699::t_fd5e03686b8d08 1-34
+lib/city/normalize-tree.ts
+  s_1ac4248eebc699::t_523d591cdeefdf 1-35
+.gitignore
+  s_1ac4248eebc699::t_fd5e03686b8d08 1-14,17-36,38-44
+  s_1ac4248eebc699::t_9edb9f9f1ee408 15-16,37
+app/globals.css
+  s_1ac4248eebc699::t_d527ea9b687343 4-5,18-56
+  s_1ac4248eebc699::t_fd5e03686b8d08 1-3,6-17,57
+playwright.config.ts
+  s_1ac4248eebc699::t_a94efe4ddb222b 9,15
+  s_1ac4248eebc699::t_6ef517a8308cfc 1-8,10-14,16-22
+components/city/repository-panel.tsx
+  s_1ac4248eebc699::t_d527ea9b687343 1-25,27-40,43-46,53-65,71-74,81-133,141-143,148-176,183-188
+  s_1ac4248eebc699::t_2eb7d562fb907a 26,41-42,47-52,66-70,75-80,134-140,144-147,177-182
+eslint.config.mjs
+  s_1ac4248eebc699::t_fd5e03686b8d08 4-15,17
+  s_1ac4248eebc699::t_2eb7d562fb907a 1-3,16,18
+lib/city/types.ts
+  s_1ac4248eebc699::t_523d591cdeefdf 1-94
+lib/city/classify-file.ts
+  s_1ac4248eebc699::t_523d591cdeefdf 1-49,79-81,94-96,106-120,123-150,154-160,164,168-175
+  s_1ac4248eebc699::t_2eb7d562fb907a 50-78,82-93,97-105,121-122,151-153,161-163,165-167
+lib/city/aggregate-files.test.ts
+  s_1ac4248eebc699::t_9e08044363b36b 21-25
+  s_1ac4248eebc699::t_fd3918d2fdd238 1-20,26-42
+app/page.tsx
+  s_1ac4248eebc699::t_d527ea9b687343 1,4
+  s_1ac4248eebc699::t_fd5e03686b8d08 2-3,5
+pnpm-workspace.yaml
+  s_1ac4248eebc699::t_fd5e03686b8d08 1-3
+lib/github/client.ts
+  s_1ac4248eebc699::t_523d591cdeefdf 1-18,20-21,25-69,73-80,83-84
+  s_1ac4248eebc699::t_b2b98084065dcd 19,22-24,81-82
+  s_1ac4248eebc699::t_2eb7d562fb907a 70-72
+tests/e2e/repository-city.spec.ts
+  s_1ac4248eebc699::t_3f4ae49a673ea9 1-34,40-55,62-64,73
+  s_1ac4248eebc699::t_c8fe647335a392 35-39,56-61,65-72
+CLAUDE.md
+  s_1ac4248eebc699::t_fd5e03686b8d08 1
+.env.example
+  s_1ac4248eebc699::t_6ef517a8308cfc 1-6
+next.config.ts
+  s_1ac4248eebc699::t_2eb7d562fb907a 1,3,5
+  s_1ac4248eebc699::t_fd5e03686b8d08 2,4
+vitest.setup.ts
+  s_1ac4248eebc699::t_6ef517a8308cfc 1
+lib/github/errors.ts
+  s_1ac4248eebc699::t_523d591cdeefdf 1-5,7-11
+  s_1ac4248eebc699::t_2eb7d562fb907a 6
+lib/city/aggregate-files.ts
+  s_1ac4248eebc699::t_523d591cdeefdf 1-14,29-61,65-67
+  s_1ac4248eebc699::t_2eb7d562fb907a 62-64
+  s_1ac4248eebc699::t_9e08044363b36b 15-28
+app/layout.tsx
+  s_1ac4248eebc699::t_fd5e03686b8d08 4-7,9-12,14-15,41-44,46-51,53,55
+  s_1ac4248eebc699::t_2eb7d562fb907a 1-3,8,13,30-31,37-38,40,45,54
+  s_1ac4248eebc699::t_d527ea9b687343 16,21-29,32-36,39,52
+  s_1ac4248eebc699::t_7810127c934d08 17-20
+postcss.config.mjs
+  s_1ac4248eebc699::t_2eb7d562fb907a 5,7
+  s_1ac4248eebc699::t_fd5e03686b8d08 1-4,6
+components/city/city-tooltip.tsx
+  s_1ac4248eebc699::t_2eb7d562fb907a 32-33
+  s_1ac4248eebc699::t_eb0aa8e2570edb 1-31,34-38
+.github/pull_request_template.md
+  s_1ac4248eebc699::t_6ef517a8308cfc 1-7
+package.json
+  s_1ac4248eebc699::t_a911b193090dd5 20
+  s_1ac4248eebc699::t_fd5e03686b8d08 1-4,9-12,21-22,27-28,33-34,36,39-41,43-44,48,51-52
+  s_1ac4248eebc699::t_6ef517a8308cfc 5-8,13-19
+  s_1ac4248eebc699::t_64d1f0fa8ae6fb 23-26,29-32,35,37-38,42,45-47,49-50
+lib/github/types.ts
+  s_1ac4248eebc699::t_523d591cdeefdf 1-27
+lib/city/classify-file.test.ts
+  s_1ac4248eebc699::t_2eb7d562fb907a 3
+  s_1ac4248eebc699::t_fd3918d2fdd238 1-2,4-34
+docs/plans/2026-07-10-repository-city-design.md
+  s_1ac4248eebc699::t_6ef517a8308cfc 1-32
+lib/utils.ts
+  s_1ac4248eebc699::t_eb0aa8e2570edb 1-21
+README.md
+  s_1ac4248eebc699::t_fd5e03686b8d08 12,14,16,61,66-67,112,114,120,122,124,126,128,130,132,134
+  s_1ac4248eebc699::t_502a9f78d73aba 1-11,13,15,17-36,49-60,62-65,68-72,77-99,110-111,113,115-119,121,123,125,127,129,131,133,135
+  s_1ac4248eebc699::t_1e8ff10bb51a2f 37-48,73-76,100-109
+LICENSE
+  s_1ac4248eebc699::t_6ef517a8308cfc 1-21
+.editorconfig
+  s_1ac4248eebc699::t_6ef517a8308cfc 1-12
+components/repository-city-logo.tsx
+  s_1ac4248eebc699::t_eb0aa8e2570edb 1-17,22-24
+  s_1ac4248eebc699::t_c74a1266420674 25-37
+  s_1ac4248eebc699::t_2eb7d562fb907a 18-21
+pnpm-lock.yaml
+  s_1ac4248eebc699::t_013b4174bcfeca 1-5782
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "e03f4b26545cede1f23a4c39beaa91274fbc2a1f",
+  "prompts": {},
+  "sessions": {
+    "s_1ac4248eebc699": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f4e58-0f2c-7193-a91f-0775dfbad49f",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Parris Digital <parrisdigital@gmail.com>"
+    }
+  }
+}
