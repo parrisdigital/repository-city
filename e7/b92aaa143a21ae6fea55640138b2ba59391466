@@ -1,0 +1,19 @@
+README.md
+  s_1ac4248eebc699::t_3ef1d08a965a0e 4
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "e7b92aaa143a21ae6fea55640138b2ba59391466",
+  "prompts": {},
+  "sessions": {
+    "s_1ac4248eebc699": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f4e58-0f2c-7193-a91f-0775dfbad49f",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Parris Digital <parrisdigital@gmail.com>"
+    }
+  }
+}
