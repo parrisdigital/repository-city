@@ -54,12 +54,20 @@ export function RepositoryPanel({
         <Stat
           icon={<FileCode2 className="size-4" />}
           label={isProfile ? "Repositories" : "Files"}
-          value={model.totalFiles.toLocaleString()}
+          value={
+            isProfile
+              ? (model.profile?.visualizedRepositories ?? 0).toLocaleString()
+              : model.totalFiles.toLocaleString()
+          }
         />
         <Stat
           icon={<Building2 className="size-4" />}
-          label={isProfile ? "Languages" : "Districts"}
-          value={model.districts.length.toLocaleString()}
+          label={isProfile ? "Files" : "Districts"}
+          value={
+            isProfile
+              ? model.totalFiles.toLocaleString()
+              : model.districts.length.toLocaleString()
+          }
         />
         <Stat
           icon={<Code2 className="size-4" />}
@@ -81,8 +89,7 @@ export function RepositoryPanel({
       >
         <div className="mb-3 flex items-center justify-between">
           <h2 className="flex items-center gap-2 text-[11px] font-medium text-[#dfe3dd]">
-            <Layers3 className="size-3.5 text-[#c7e739]" />{" "}
-            {isProfile ? "Repository types" : "File categories"}
+            <Layers3 className="size-3.5 text-[#c7e739]" /> File categories
           </h2>
           <span className="font-mono text-[9px] text-[#727d81]">
             {formatBytes(model.totalBytes)}
@@ -108,11 +115,7 @@ export function RepositoryPanel({
                   className="size-2.5 shrink-0"
                   style={{ backgroundColor: CATEGORY_COLORS[stat.category] }}
                 />
-                <span className="flex-1">
-                  {isProfile
-                    ? profileCategoryLabel(stat.category)
-                    : titleCase(stat.category)}
-                </span>
+                <span className="flex-1">{titleCase(stat.category)}</span>
                 <span className="font-mono text-[9px] tabular-nums">
                   {stat.count.toLocaleString()}
                 </span>
@@ -164,16 +167,6 @@ export function RepositoryPanel({
       ) : null}
     </div>
   )
-}
-
-function profileCategoryLabel(category: FileCategory) {
-  return {
-    source: "Original",
-    test: "Forks",
-    docs: "Archived",
-    config: "Templates",
-    other: "Other",
-  }[category]
 }
 
 function Stat({

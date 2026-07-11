@@ -15,13 +15,13 @@
 
 ## Overview
 
-Repository City turns a public GitHub profile or repository into a navigable 3D city. For profiles, languages become districts and every public repository becomes a building. For individual repositories, directories become districts and files become buildings. The result is deterministic, shareable, filterable, and exportable.
+Repository City turns a public GitHub profile or repository into a navigable 3D city. For profiles, every public repository becomes its own connected neighborhood and that repository's files become buildings. For individual repositories, top-level directories become districts and files become buildings. The result is deterministic, shareable, filterable, and exportable.
 
 There is no database, account, or repository upload. The app uses a thin Next.js API route to request public repository metadata from GitHub and renders the resulting city locally in the browser.
 
 ## Features
 
-- **Public profile cities** — paste a profile URL or username to map every public repository.
+- **Public profile metropolises** — paste a profile URL or username to join every public repository city into one world.
 - **File-level repository cities** — paste a repository URL or `owner/repository` to explore its source tree.
 - **Architectural data mapping** — folders form districts and files become buildings.
 - **Useful visual categories** — source, tests, documentation, configuration, and other files use distinct materials.
@@ -38,16 +38,14 @@ There is no database, account, or repository upload. The app uses a thin Next.js
 
 ### GitHub profiles
 
-| Profile data        | City representation                        |
-| ------------------- | ------------------------------------------ |
-| Primary language    | District                                   |
-| Public repository   | Building                                   |
-| Repository size     | Primary building height                    |
-| Original project    | Cobalt building                            |
-| Fork                | Violet building                            |
-| Archived project    | Cyan building                              |
-| Repository template | Chartreuse building                        |
-| GitHub repository   | Hover detail and click-through destination |
+| Profile data           | City representation                        |
+| ---------------------- | ------------------------------------------ |
+| Public repository      | Connected neighborhood / repository city   |
+| Repository source file | Building                                   |
+| File size              | Primary building height                    |
+| File category          | Building color                             |
+| Repository name        | District label                             |
+| GitHub file path       | Hover detail and click-through destination |
 
 ### Individual repositories
 

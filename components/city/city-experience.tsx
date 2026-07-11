@@ -88,7 +88,6 @@ export function CityExperience({
   const loadRepository = useCallback(async (value: string) => {
     setLoading(true)
     setError(null)
-    setModel(null)
     setSelectedId(null)
     setHovered(null)
     setVisibleCategories(new Set(FILE_CATEGORIES))
@@ -108,6 +107,7 @@ export function CityExperience({
           : city.repository.fullName
       )
     } catch (requestError) {
+      setModel(null)
       setError(
         requestError instanceof Error
           ? requestError.message
@@ -149,11 +149,12 @@ export function CityExperience({
       )
       return
     }
-    router.push(
+    const path =
       parsed.kind === "profile"
         ? `/profile/${encodeURIComponent(parsed.owner)}`
         : `/city/${encodeURIComponent(parsed.owner)}/${encodeURIComponent(parsed.repository)}`
-    )
+    window.history.pushState(null, "", path)
+    void loadRepository(value)
   }
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -179,10 +180,23 @@ export function CityExperience({
     []
   )
 
-  const handleSelect = useCallback((building: CityBuilding) => {
-    setSelectedId(building.id)
-    window.open(building.url, "_blank", "noopener,noreferrer")
-  }, [])
+  const handleSelect = useCallback(
+    (building: CityBuilding) => {
+      setSelectedId(building.id)
+      if (model?.kind === "profile") {
+        const repository = `${model.repository.owner}/${building.district}`
+        window.history.pushState(
+          null,
+          "",
+          `/city/${encodeURIComponent(model.repository.owner)}/${encodeURIComponent(building.district)}`
+        )
+        void loadRepository(repository)
+        return
+      }
+      window.open(building.url, "_blank", "noopener,noreferrer")
+    },
+    [loadRepository, model]
+  )
 
   async function handleShare() {
     const url = window.location.href
@@ -342,7 +356,7 @@ export function CityExperience({
           />
         ) : null}
 
-        {loading ? (
+        {loading && !model ? (
           <div className="absolute inset-0 z-10 grid place-items-center bg-[#090d11]">
             <div className="text-center">
               <div className="mx-auto mb-5 grid size-12 place-items-center border border-[#c7e739]/40">
@@ -353,6 +367,13 @@ export function CityExperience({
                 collecting data · planning districts · raising buildings
               </p>
             </div>
+          </div>
+        ) : null}
+
+        {loading && model ? (
+          <div className="absolute top-5 left-1/2 z-30 flex -translate-x-1/2 items-center gap-2 border border-white/12 bg-[#11181d]/95 px-4 py-2 font-mono text-[10px] text-[#cbd2d0] shadow-xl backdrop-blur">
+            <LoaderCircle className="size-3.5 animate-spin text-[#c7e739]" />
+            Building the next city
           </div>
         ) : null}
 
@@ -497,7 +518,7 @@ export function CityExperience({
         <CityTooltip
           building={hovered}
           position={tooltipPosition}
-          kind={model?.kind ?? "repository"}
+          drillDown={model?.kind === "profile"}
         />
       ) : null}
 

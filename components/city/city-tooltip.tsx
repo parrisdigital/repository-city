@@ -1,4 +1,4 @@
-import type { CityBuilding, CityModel } from "@/lib/city/types"
+import type { CityBuilding } from "@/lib/city/types"
 import { formatBytes, titleCase } from "@/lib/utils"
 
 export type TooltipPosition = { x: number; y: number }
@@ -6,11 +6,11 @@ export type TooltipPosition = { x: number; y: number }
 export function CityTooltip({
   building,
   position,
-  kind,
+  drillDown = false,
 }: {
   building: CityBuilding
   position: TooltipPosition
-  kind: CityModel["kind"]
+  drillDown?: boolean
 }) {
   return (
     <div
@@ -26,11 +26,7 @@ export function CityTooltip({
           <span className="size-2 rounded-full bg-current" />
           {building.language}
         </span>
-        <span>
-          {kind === "profile"
-            ? profileCategoryLabel(building.category)
-            : titleCase(building.category)}
-        </span>
+        <span>{titleCase(building.category)}</span>
         <span>{formatBytes(building.size)}</span>
       </div>
       {building.isAggregate ? (
@@ -39,16 +35,11 @@ export function CityTooltip({
           files
         </p>
       ) : null}
+      {drillDown ? (
+        <p className="mt-2 text-[10px] text-[#c7e739]">
+          Click to explore the {building.district} repository city
+        </p>
+      ) : null}
     </div>
   )
-}
-
-function profileCategoryLabel(category: CityBuilding["category"]) {
-  return {
-    source: "Original",
-    test: "Fork",
-    docs: "Archived",
-    config: "Template",
-    other: "Other",
-  }[category]
 }

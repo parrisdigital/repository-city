@@ -1,7 +1,10 @@
 import { describe, expect, it } from "vitest"
 
 import { buildProfileCityModel } from "@/lib/city/build-profile-city"
-import type { GitHubRepositoryResponse } from "@/lib/github/types"
+import type {
+  GitHubRepositoryResponse,
+  GitHubTreeEntry,
+} from "@/lib/github/types"
 
 function repository(
   id: number,
@@ -49,14 +52,23 @@ describe("buildProfileCityModel", () => {
         repository(2, "site", "TypeScript", { fork: true }),
         repository(3, "tools", "Python", { archived: true }),
       ],
+      repositoryTrees: [
+        tree(repository(1, "city", "TypeScript"), "app/page.tsx"),
+        tree(
+          repository(2, "site", "TypeScript", { fork: true }),
+          "src/site.test.ts"
+        ),
+        tree(repository(3, "tools", "Python", { archived: true }), "README.md"),
+      ],
     })
 
     expect(city.kind).toBe("profile")
     expect(city.totalFiles).toBe(3)
     expect(city.renderedBuildings).toBe(3)
     expect(city.districts.map((district) => district.name).sort()).toEqual([
-      "Python",
-      "TypeScript",
+      "city",
+      "site",
+      "tools",
     ])
     expect(city.categories.map((category) => category.category)).toEqual([
       "source",
@@ -65,3 +77,20 @@ describe("buildProfileCityModel", () => {
     ])
   })
 })
+
+function tree(sourceRepository: GitHubRepositoryResponse, path: string) {
+  const entry: GitHubTreeEntry = {
+    path,
+    mode: "100644",
+    type: "blob",
+    sha: `${sourceRepository.id}-${path}`,
+    size: sourceRepository.id * 1000,
+    url: `https://api.github.com/repos/parrisdigital/${sourceRepository.name}/git/blobs/${sourceRepository.id}`,
+  }
+  return {
+    repository: sourceRepository,
+    tree: [entry],
+    treeSha: `tree-${sourceRepository.id}`,
+    truncated: false,
+  }
+}

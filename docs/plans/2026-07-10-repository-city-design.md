@@ -1,11 +1,11 @@
 # Repository City design
 
-Repository City turns a public GitHub repository into an interactive isometric city. Top-level folders become districts, files become buildings, file size controls height, and file category controls color.
+Repository City turns a public GitHub profile or repository into an interactive isometric city. A profile becomes a connected metropolis of repository neighborhoods; inside each neighborhood, files become buildings. For an individual repository, top-level folders become districts. File size controls height and file category controls color in both modes.
 
 ## MVP
 
 - Accept a GitHub profile URL, username, repository URL, or `owner/repository`.
-- Render profile cities with languages as districts and public repositories as buildings.
+- Render every public profile repository as a connected neighborhood with its source files as buildings.
 - Support public repositories without user accounts.
 - Fetch repository metadata and a recursive Git tree through a server route.
 - Filter binary, generated, vendor, lock, and build artifacts.
@@ -14,7 +14,7 @@ Repository City turns a public GitHub repository into an interactive isometric c
 - Render the model using an orthographic React Three Fiber scene.
 - Support hover details, file links, filters, reset view, sharing, and PNG export.
 - Provide useful empty, loading, rate-limit, not-found, oversized, and WebGL fallback states.
-- Create shareable `/city/[owner]/[repository]` routes.
+- Create shareable `/city/[owner]/[repository]` and `/profile/[owner]` routes.
 
 ## Visual system
 

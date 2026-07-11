@@ -85,6 +85,7 @@ export type CityModel = {
     name: string | null
     avatarUrl: string
     publicRepositories: number
+    visualizedRepositories: number
     followers: number
     following: number
   }
