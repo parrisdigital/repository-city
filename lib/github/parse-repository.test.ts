@@ -1,0 +1,29 @@
+import { describe, expect, it } from "vitest"
+
+import { parseRepositoryInput } from "@/lib/github/parse-repository"
+
+describe("parseRepositoryInput", () => {
+  it.each([
+    ["vercel/next.js", { owner: "vercel", repository: "next.js" }],
+    [
+      "https://github.com/facebook/react",
+      { owner: "facebook", repository: "react" },
+    ],
+    [
+      "github.com/parrisdigital/Repository-City.git",
+      { owner: "parrisdigital", repository: "Repository-City" },
+    ],
+  ])("parses %s", (input, expected) => {
+    expect(parseRepositoryInput(input)).toEqual(expected)
+  })
+
+  it.each([
+    "",
+    "github.com/owner",
+    "https://gitlab.com/owner/repo",
+    "owner/repo/issues",
+    "-owner/repo",
+  ])("rejects %s", (input) => {
+    expect(parseRepositoryInput(input)).toBeNull()
+  })
+})
