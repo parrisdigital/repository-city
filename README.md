@@ -4,7 +4,7 @@
   <p><a href="https://repository-city.vercel.app"><strong>Open the live city →</strong></a></p>
   <p>
     <a href="https://github.com/parrisdigital/repository-city/actions/workflows/ci.yml"><img alt="CI" src="https://shieldcn.dev/github/ci/parrisdigital/repository-city.svg?variant=outline" /></a>
-    <a href="https://github.com/parrisdigital/repository-city/stargazers"><img alt="Stars" src="https://shieldcn.dev/github/stars/parrisdigital/repository-city.svg?variant=branded" /></a>
+    <a href="https://github.com/parrisdigital/repository-city/stargazers"><img alt="Stars" src="https://shieldcn.dev/github/stars/parrisdigital/repository-city.svg?variant=branded&amp;v=20260711" /></a>
     <a href="https://github.com/parrisdigital/repository-city/forks"><img alt="Forks" src="https://shieldcn.dev/github/forks/parrisdigital/repository-city.svg?variant=branded" /></a>
     <a href="./LICENSE"><img alt="License" src="https://shieldcn.dev/github/license/parrisdigital/repository-city.svg?variant=outline" /></a>
     <a href="https://github.com/parrisdigital/repository-city/commits/main"><img alt="Last commit" src="https://shieldcn.dev/github/last-commit/parrisdigital/repository-city.svg?variant=secondary" /></a>
