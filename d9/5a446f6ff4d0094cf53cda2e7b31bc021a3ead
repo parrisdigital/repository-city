@@ -1,0 +1,46 @@
+app/api/city/route.ts
+  s_1ac4248eebc699::t_73bb2f45957cc8 127
+  s_1ac4248eebc699::t_deaad03678b92a 75,93
+  s_1ac4248eebc699::t_8717f32856336b 3-5,14-51,73-74,76,79-92,94-96
+  s_1ac4248eebc699::t_3749ac8bf08ad6 77-78
+  s_1ac4248eebc699::t_df5ab6b84ac705 2
+README.md
+  s_1ac4248eebc699::t_5450a5002e2ebb 18,24,41-48
+docs/plans/2026-07-10-repository-city-design.md
+  s_1ac4248eebc699::t_4c3abd4b74eaef 3,8,17
+components/city/city-tooltip.tsx
+  s_1ac4248eebc699::t_0be3ba39607c5c 1,29
+  s_1ac4248eebc699::t_6c11f918db7e31 9,13,38-40
+  s_1ac4248eebc699::t_97b6d3f0922b87 41-42
+components/city/city-experience.tsx
+  s_1ac4248eebc699::t_6c11f918db7e31 110,152,156-157,183-199,359,373-379,521
+components/city/repository-panel.tsx
+  s_1ac4248eebc699::t_3749ac8bf08ad6 92
+  s_1ac4248eebc699::t_1914d4396bc4c5 57-61,65-70,118
+lib/city/build-profile-city.ts
+  s_1ac4248eebc699::t_cc929532d97648 1,3,12,15,17-19,56-58,62-64,66-77,79-83,85,87-113,121-122,136,148,152-153,156
+  s_1ac4248eebc699::t_3749ac8bf08ad6 116-117,135
+  s_1ac4248eebc699::t_ded9855c895482 22-39,84
+  s_1ac4248eebc699::t_8a36820b56b76c 20-21
+lib/city/types.ts
+  s_1ac4248eebc699::t_cc929532d97648 88
+lib/city/build-profile-city.test.ts
+  s_1ac4248eebc699::t_3749ac8bf08ad6 61,81
+  s_1ac4248eebc699::t_823852ba4e04ec 4-7,55-60,62,69-71,80,82-96
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "d95a446f6ff4d0094cf53cda2e7b31bc021a3ead",
+  "prompts": {},
+  "sessions": {
+    "s_1ac4248eebc699": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f4e58-0f2c-7193-a91f-0775dfbad49f",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Parris Digital <parrisdigital@gmail.com>"
+    }
+  }
+}
