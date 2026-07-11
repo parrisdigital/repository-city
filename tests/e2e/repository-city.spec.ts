@@ -49,10 +49,19 @@ test("loads a city and toggles a category", async ({ page }) => {
   await expect(source).toHaveAttribute("aria-pressed", "false")
 })
 
+test("accepts a public GitHub profile URL", async ({ page }) => {
+  await page.goto("/")
+  await page
+    .getByRole("textbox", { name: "GitHub profile or repository" })
+    .fill("https://github.com/parrisdigital")
+  await page.getByRole("button", { name: "Build city" }).click()
+  await expect(page).toHaveURL(/\/profile\/parrisdigital$/)
+})
+
 test("opens the repository sheet on mobile", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 })
   await page.goto("/")
-  await page.getByRole("button", { name: "Layers & repository" }).click()
+  await page.getByRole("button", { name: "Layers & city" }).click()
   await expect(
     page.getByRole("heading", { name: "Language distribution" })
   ).toBeVisible()

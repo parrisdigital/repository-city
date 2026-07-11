@@ -79,7 +79,15 @@ export type CityWarning = {
 }
 
 export type CityModel = {
+  kind: "repository" | "profile"
   repository: RepositorySummary
+  profile?: {
+    name: string | null
+    avatarUrl: string
+    publicRepositories: number
+    followers: number
+    following: number
+  }
   treeSha: string
   generatedAt: string
   totalFiles: number

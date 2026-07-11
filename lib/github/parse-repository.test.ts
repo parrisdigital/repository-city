@@ -1,6 +1,9 @@
 import { describe, expect, it } from "vitest"
 
-import { parseRepositoryInput } from "@/lib/github/parse-repository"
+import {
+  parseGitHubInput,
+  parseRepositoryInput,
+} from "@/lib/github/parse-repository"
 
 describe("parseRepositoryInput", () => {
   it.each([
@@ -25,5 +28,26 @@ describe("parseRepositoryInput", () => {
     "-owner/repo",
   ])("rejects %s", (input) => {
     expect(parseRepositoryInput(input)).toBeNull()
+  })
+})
+
+describe("parseGitHubInput", () => {
+  it.each([
+    ["parrisdigital", { kind: "profile", owner: "parrisdigital" }],
+    ["@parrisdigital", { kind: "profile", owner: "parrisdigital" }],
+    [
+      "https://github.com/parrisdigital",
+      { kind: "profile", owner: "parrisdigital" },
+    ],
+    [
+      "parrisdigital/repository-city",
+      {
+        kind: "repository",
+        owner: "parrisdigital",
+        repository: "repository-city",
+      },
+    ],
+  ])("parses %s", (input, expected) => {
+    expect(parseGitHubInput(input)).toEqual(expected)
   })
 })

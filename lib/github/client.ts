@@ -1,5 +1,6 @@
 import { GitHubRequestError } from "@/lib/github/errors"
 import type {
+  GitHubProfileResponse,
   GitHubRepositoryResponse,
   GitHubTreeResponse,
 } from "@/lib/github/types"
@@ -27,7 +28,7 @@ async function githubFetch<T>(path: string, cacheResponse = true): Promise<T> {
 
   if (response.status === 404) {
     throw new GitHubRequestError(
-      "That public repository could not be found.",
+      "That public GitHub profile or repository could not be found.",
       404,
       "NOT_FOUND"
     )
@@ -46,7 +47,7 @@ async function githubFetch<T>(path: string, cacheResponse = true): Promise<T> {
 
   if (!response.ok) {
     throw new GitHubRequestError(
-      "GitHub could not provide this repository right now.",
+      "GitHub could not provide this profile or repository right now.",
       502,
       "UPSTREAM"
     )
@@ -61,6 +62,26 @@ async function githubFetch<T>(path: string, cacheResponse = true): Promise<T> {
       "INVALID_RESPONSE"
     )
   }
+}
+
+export async function fetchProfile(
+  owner: string
+): Promise<GitHubProfileResponse> {
+  return githubFetch(`/users/${encodeURIComponent(owner)}`)
+}
+
+export async function fetchProfileRepositories(
+  owner: string
+): Promise<GitHubRepositoryResponse[]> {
+  const repositories: GitHubRepositoryResponse[] = []
+  for (let page = 1; page <= 10; page += 1) {
+    const batch = await githubFetch<GitHubRepositoryResponse[]>(
+      `/users/${encodeURIComponent(owner)}/repos?type=public&sort=updated&per_page=100&page=${page}`
+    )
+    repositories.push(...batch)
+    if (batch.length < 100) break
+  }
+  return repositories
 }
 
 export async function fetchRepository(

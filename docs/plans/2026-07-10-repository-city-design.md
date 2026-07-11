@@ -4,7 +4,8 @@ Repository City turns a public GitHub repository into an interactive isometric c
 
 ## MVP
 
-- Accept a GitHub URL or `owner/repository`.
+- Accept a GitHub profile URL, username, repository URL, or `owner/repository`.
+- Render profile cities with languages as districts and public repositories as buildings.
 - Support public repositories without user accounts.
 - Fetch repository metadata and a recursive Git tree through a server route.
 - Filter binary, generated, vendor, lock, and build artifacts.

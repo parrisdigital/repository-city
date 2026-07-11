@@ -51,6 +51,7 @@ export function buildCityModel({
   }
 
   return {
+    kind: "repository",
     repository,
     treeSha,
     generatedAt: new Date().toISOString(),

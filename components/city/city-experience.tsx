@@ -38,12 +38,12 @@ import {
   type CityModel,
   type FileCategory,
 } from "@/lib/city/types"
-import { parseRepositoryInput } from "@/lib/github/parse-repository"
+import { parseGitHubInput } from "@/lib/github/parse-repository"
 
-const DEFAULT_REPOSITORY = "vercel/next.js"
+const DEFAULT_REPOSITORY = "parrisdigital"
 const EXAMPLES = [
   DEFAULT_REPOSITORY,
-  "react/react",
+  "vercel/next.js",
   "radiumcoders/Isometric-Github-Contributions",
 ]
 
@@ -101,7 +101,12 @@ export function CityExperience({
         throw new Error(payload.error ?? "The repository could not be loaded.")
       }
       setModel(payload as CityModel)
-      setQuery((payload as CityModel).repository.fullName)
+      const city = payload as CityModel
+      setQuery(
+        city.kind === "profile"
+          ? city.repository.owner
+          : city.repository.fullName
+      )
     } catch (requestError) {
       setError(
         requestError instanceof Error
@@ -135,15 +140,19 @@ export function CityExperience({
   }, [])
 
   function navigateTo(value: string) {
-    const parsed = parseRepositoryInput(value)
+    const parsed = parseGitHubInput(value)
     if (!parsed) {
       setModel(null)
       setLoading(false)
-      setError("Enter a valid GitHub repository URL or owner/repository.")
+      setError(
+        "Enter a valid GitHub profile, repository URL, username, or owner/repository."
+      )
       return
     }
     router.push(
-      `/city/${encodeURIComponent(parsed.owner)}/${encodeURIComponent(parsed.repository)}`
+      parsed.kind === "profile"
+        ? `/profile/${encodeURIComponent(parsed.owner)}`
+        : `/city/${encodeURIComponent(parsed.owner)}/${encodeURIComponent(parsed.repository)}`
     )
   }
 
@@ -275,8 +284,8 @@ export function CityExperience({
           <input
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            placeholder="github.com/owner/repository"
-            aria-label="GitHub repository"
+            placeholder="GitHub profile or repository"
+            aria-label="GitHub profile or repository"
             className="min-w-0 flex-1 bg-transparent px-3 font-mono text-[11px] text-[#e7eae5] outline-none placeholder:text-[#667176] focus-visible:ring-1 focus-visible:ring-[#c7e739] focus-visible:ring-inset"
           />
           <button
@@ -339,9 +348,9 @@ export function CityExperience({
               <div className="mx-auto mb-5 grid size-12 place-items-center border border-[#c7e739]/40">
                 <LoaderCircle className="size-5 animate-spin text-[#c7e739]" />
               </div>
-              <p className="text-sm font-medium">Reading the repository</p>
+              <p className="text-sm font-medium">Reading GitHub</p>
               <p className="mt-2 font-mono text-[10px] text-[#778287]">
-                classifying files · planning districts · raising buildings
+                collecting data · planning districts · raising buildings
               </p>
             </div>
           </div>
@@ -423,7 +432,7 @@ export function CityExperience({
               onClick={() => setMobilePanelOpen(true)}
               className="flex min-h-12 flex-1 items-center gap-2 border border-white/14 bg-[#12191e]/96 px-4 text-xs font-medium backdrop-blur"
             >
-              <Layers3 className="size-4 text-[#c7e739]" /> Layers & repository
+              <Layers3 className="size-4 text-[#c7e739]" /> Layers & city
             </button>
             <button
               type="button"
@@ -485,7 +494,11 @@ export function CityExperience({
       ) : null}
 
       {hovered && tooltipPosition ? (
-        <CityTooltip building={hovered} position={tooltipPosition} />
+        <CityTooltip
+          building={hovered}
+          position={tooltipPosition}
+          kind={model?.kind ?? "repository"}
+        />
       ) : null}
 
       {toast ? (

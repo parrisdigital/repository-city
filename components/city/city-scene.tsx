@@ -139,6 +139,7 @@ function DistrictLabel({ district }: { district: CityDistrict }) {
         district.z - district.depth / 2 + 0.9,
       ]}
       scale={[2.4, 0.6, 1]}
+      raycast={() => null}
     >
       <spriteMaterial map={texture} transparent depthTest={false} />
     </sprite>
@@ -417,21 +418,28 @@ function BuildingLayer({
   useLayoutEffect(() => {
     const mesh = meshRef.current
     if (!mesh) return
-    buildings.forEach((building, index) => {
+    buildings.forEach((_, index) => {
       setMatrix(index, 0)
-      const color = tempColor.set(building.color)
-      if (building.id === selectedId)
-        color.lerp(new THREE.Color("#e6ff4f"), 0.74)
-      mesh.setColorAt(index, color)
     })
     mesh.instanceMatrix.needsUpdate = true
-    if (mesh.instanceColor) mesh.instanceColor.needsUpdate = true
     if (capRef.current) capRef.current.instanceMatrix.needsUpdate = true
     if (crownRef.current) crownRef.current.instanceMatrix.needsUpdate = true
     if (accentRef.current) accentRef.current.instanceMatrix.needsUpdate = true
     startedAt.current = null
     done.current = false
-  }, [buildings, selectedId, setMatrix, tempColor])
+  }, [buildings, setMatrix])
+
+  useLayoutEffect(() => {
+    const mesh = meshRef.current
+    if (!mesh) return
+    buildings.forEach((building, index) => {
+      const color = tempColor.set(building.color)
+      if (building.id === selectedId)
+        color.lerp(new THREE.Color("#e6ff4f"), 0.74)
+      mesh.setColorAt(index, color)
+    })
+    if (mesh.instanceColor) mesh.instanceColor.needsUpdate = true
+  }, [buildings, selectedId, tempColor])
 
   useFrame(({ clock }) => {
     const mesh = meshRef.current
@@ -485,17 +493,20 @@ function BuildingLayer({
         args={[detailGeometry, capMaterial, buildings.length]}
         castShadow
         frustumCulled={false}
+        raycast={() => null}
       />
       <instancedMesh
         ref={crownRef}
         args={[detailGeometry, crownMaterial, buildings.length]}
         castShadow
         frustumCulled={false}
+        raycast={() => null}
       />
       <instancedMesh
         ref={accentRef}
         args={[detailGeometry, accentMaterial, buildings.length]}
         frustumCulled={false}
+        raycast={() => null}
       />
     </group>
   )

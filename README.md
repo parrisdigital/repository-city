@@ -15,13 +15,14 @@
 
 ## Overview
 
-Repository City reads a public GitHub repository tree and turns its structure into a navigable 3D city. Directories become districts, files become buildings, file size determines height, and file category determines color. The result is deterministic, shareable, filterable, and exportable.
+Repository City turns a public GitHub profile or repository into a navigable 3D city. For profiles, languages become districts and every public repository becomes a building. For individual repositories, directories become districts and files become buildings. The result is deterministic, shareable, filterable, and exportable.
 
 There is no database, account, or repository upload. The app uses a thin Next.js API route to request public repository metadata from GitHub and renders the resulting city locally in the browser.
 
 ## Features
 
-- **Real repository cities** — paste a GitHub URL or `owner/repository`.
+- **Public profile cities** — paste a profile URL or username to map every public repository.
+- **File-level repository cities** — paste a repository URL or `owner/repository` to explore its source tree.
 - **Architectural data mapping** — folders form districts and files become buildings.
 - **Useful visual categories** — source, tests, documentation, configuration, and other files use distinct materials.
 - **Large-repository aggregation** — oversized trees are condensed to a safe rendering budget while preserving totals.
@@ -34,6 +35,21 @@ There is no database, account, or repository upload. The app uses a thin Next.js
 - **Graceful failure modes** — validation, not-found, rate-limit, empty-tree, aggregate, and WebGL fallback states.
 
 ## How repositories become cities
+
+### GitHub profiles
+
+| Profile data        | City representation                        |
+| ------------------- | ------------------------------------------ |
+| Primary language    | District                                   |
+| Public repository   | Building                                   |
+| Repository size     | Primary building height                    |
+| Original project    | Cobalt building                            |
+| Fork                | Violet building                            |
+| Archived project    | Cyan building                              |
+| Repository template | Chartreuse building                        |
+| GitHub repository   | Hover detail and click-through destination |
+
+### Individual repositories
 
 | Repository data     | City representation           |
 | ------------------- | ----------------------------- |
@@ -67,7 +83,7 @@ cp .env.example .env.local
 pnpm dev
 ```
 
-Open `http://localhost:3000` and enter a public GitHub repository.
+Open `http://localhost:3000` and enter a public GitHub profile or repository.
 
 ### Environment variables
 
@@ -84,6 +100,7 @@ Never expose `GITHUB_TOKEN` through a `NEXT_PUBLIC_` variable.
 app/
   api/city/route.ts                 GitHub-backed city API
   city/[owner]/[repository]/        Shareable city routes
+  profile/[owner]/                  Shareable profile-city routes
 components/
   city/                             Application shell and Three.js scene
 lib/
