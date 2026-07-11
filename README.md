@@ -1,6 +1,7 @@
 <div align="center">
   <h1>Repository City</h1>
   <p>Turn any public GitHub repository into an interactive isometric city.</p>
+  <p><a href="https://repository-city.vercel.app"><strong>Open the live city →</strong></a></p>
   <p>
     <a href="https://github.com/parrisdigital/repository-city/actions/workflows/ci.yml"><img alt="CI" src="https://shieldcn.dev/github/ci/parrisdigital/repository-city.svg?variant=outline" /></a>
     <a href="https://github.com/parrisdigital/repository-city/stargazers"><img alt="Stars" src="https://shieldcn.dev/github/stars/parrisdigital/repository-city.svg?variant=branded" /></a>
