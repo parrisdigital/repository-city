@@ -1,0 +1,19 @@
+.github/dependabot.yml
+  s_1ac4248eebc699::t_b02ee38a05a723 10-12,15-30
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "02139c0a375d81bd45d5c51dbe14b30884024761",
+  "prompts": {},
+  "sessions": {
+    "s_1ac4248eebc699": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f4e58-0f2c-7193-a91f-0775dfbad49f",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Parris Digital <parrisdigital@gmail.com>"
+    }
+  }
+}
