@@ -1,0 +1,67 @@
+lib/city/types.ts
+  s_1ac4248eebc699::t_60da71ad382a48 82,84-90
+components/city/city-scene.tsx
+  s_1ac4248eebc699::t_00854cfa18bd08 142
+  s_1ac4248eebc699::t_215d5a56cff632 421,430-442,496,503,509
+lib/city/build-city.ts
+  s_1ac4248eebc699::t_901939150cc4b4 54
+lib/github/parse-repository.ts
+  s_1ac4248eebc699::t_1468392500fc7d 16-18,20,24-30,33-35,37-43,54-67
+lib/city/build-profile-city.ts
+  s_1ac4248eebc699::t_901939150cc4b4 1-112
+tests/e2e/repository-city.spec.ts
+  s_1ac4248eebc699::t_a2baba1931783b 52-60
+  s_1ac4248eebc699::t_ef6b3ad9a145c6 64
+lib/github/parse-repository.test.ts
+  s_1ac4248eebc699::t_ef2ef1c52b6542 3-6,33-51
+  s_1ac4248eebc699::t_ecfa4c69a5dd0f 52-53
+lib/github/client.ts
+  s_1ac4248eebc699::t_c0604594e5b818 3,67-85
+  s_1ac4248eebc699::t_985c72ffb91b5b 31,50
+  s_1ac4248eebc699::t_5c2ee2b397ff08 86
+components/city/repository-panel.tsx
+  s_1ac4248eebc699::t_eb5f57c548a0c8 20,56,61,84-85,111-115,169-176
+  s_1ac4248eebc699::t_4da87aa9b0b94b 177-178
+lib/city/build-profile-city.test.ts
+  s_1ac4248eebc699::t_b7d218b024c7c5 1-67
+app/api/city/route.ts
+  s_1ac4248eebc699::t_ad273c250f06b4 32-37
+  s_1ac4248eebc699::t_40ff26aa229441 2-8,10,14,18-21,27-31,38-39
+package.json
+  s_1ac4248eebc699::t_a07347ad80d29d 51
+  s_1ac4248eebc699::t_675715cd4ed59f 9-13
+README.md
+  s_1ac4248eebc699::t_28891875f0052e 18,24-25,39-40,49,51-53,86,103
+  s_1ac4248eebc699::t_75d113d6e518e1 41-48,50
+docs/plans/2026-07-10-repository-city-design.md
+  s_1ac4248eebc699::t_1f2bfe881c2e94 7-8
+components/city/city-tooltip.tsx
+  s_1ac4248eebc699::t_a3c196caa4f225 1,9,13,29-33,45-53
+  s_1ac4248eebc699::t_da0e9d906b5613 54
+lib/github/types.ts
+  s_1ac4248eebc699::t_60da71ad382a48 2,12-16,20-29
+  s_1ac4248eebc699::t_6f10d4be9af920 30-31
+app/profile/[owner]/page.tsx
+  s_1ac4248eebc699::t_1e2e1776080e39 1-22
+components/city/city-experience.tsx
+  s_1ac4248eebc699::t_eb5f57c548a0c8 435
+  s_1ac4248eebc699::t_86fa6a18c0d3d7 41,43,46,104-109,143,147-149,153-155,287-288,351,353,497-501
+pnpm-lock.yaml
+  s_1ac4248eebc699::t_25737e32cce3d9 7-9,78-80,4986
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.12",
+  "base_commit_sha": "b78eef0b834a6e956c52238bb35edd410084d1c1",
+  "prompts": {},
+  "sessions": {
+    "s_1ac4248eebc699": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "019f4e58-0f2c-7193-a91f-0775dfbad49f",
+        "model": "gpt-5.6-sol"
+      },
+      "human_author": "Parris Digital <parrisdigital@gmail.com>"
+    }
+  }
+}
