@@ -8,7 +8,7 @@
   },
   "pnpm": {
     "overrides": {
-      "postcss": "^8.5.16"
+      "postcss": "^8.5.26"
     }
   },
   "scripts": {
@@ -37,22 +37,22 @@
     "zod": "^4.4.3"
   },
   "devDependencies": {
-    "@playwright/test": "^1.61.1",
+    "@playwright/test": "^1.62.1",
     "@tailwindcss/postcss": "^4",
     "@testing-library/jest-dom": "^6.9.1",
-    "@testing-library/react": "^16.3.2",
+    "@testing-library/react": "^16.3.3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@types/three": "^0.185.1",
+    "@types/three": "^0.185.4",
     "eslint": "^9",
-    "eslint-config-next": "16.2.10",
+    "eslint-config-next": "16.3.4",
     "jsdom": "^29.1.1",
-    "postcss": "^8.5.16",
-    "prettier": "^3.9.5",
-    "prettier-plugin-tailwindcss": "^0.8.0",
+    "postcss": "^8.5.26",
+    "prettier": "^3.9.6",
+    "prettier-plugin-tailwindcss": "^0.8.1",
     "tailwindcss": "^4",
     "typescript": "^5",
-    "vitest": "^4.1.10"
+    "vitest": "^4.1.11"
   }
 }
