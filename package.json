@@ -25,16 +25,16 @@
     "check": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm test && pnpm build && pnpm test:e2e --project=chromium"
   },
   "dependencies": {
-    "@react-three/drei": "^10.7.7",
-    "@react-three/fiber": "^9.6.1",
+    "@react-three/drei": "^10.7.8",
+    "@react-three/fiber": "^9.7.0",
     "clsx": "^2.1.1",
-    "lucide-react": "^1.24.0",
-    "next": "16.2.10",
-    "react": "19.2.4",
-    "react-dom": "19.2.4",
+    "lucide-react": "^1.43.0",
+    "next": "16.3.4",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
     "tailwind-merge": "^3.6.0",
-    "three": "^0.185.1",
-    "zod": "^4.4.3"
+    "three": "^0.186.0",
+    "zod": "^4.6.1"
   },
   "devDependencies": {
     "@playwright/test": "^1.61.1",
